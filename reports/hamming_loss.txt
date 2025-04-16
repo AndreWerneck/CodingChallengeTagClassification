@@ -1,0 +1,2 @@
+Hamming Loss: 0.1228
+Hamming Loss (Focus Tags): 0.0779
