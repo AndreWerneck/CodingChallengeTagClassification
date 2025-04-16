@@ -101,6 +101,7 @@ What’s inside
 	•	data/: where the test split is saved
 	•	notebooks/: contains EDA and the final dataset (code_classification_dataset_v3.csv)
     •	reports/: contains the metrics on the test set. 
+
 ```
 ⸻
 
@@ -119,11 +120,12 @@ Here are the final metrics obtained using the default configuration (TF-IDF + Lo
 Classification Report — All Tags
 
 Metric	Precision	Recall	F1-score	Support
-Micro avg	0.45	0.55	0.49	2778
-Macro avg	0.44	0.54	0.48	2778
-Weighted avg	0.46	0.55	0.50	2778
-Samples avg	0.47	0.58	0.48	2778
-Hamming Loss	—	—	—	0.1228
+Micro avg	0.45	0.55	0.49	    2778
+Macro avg	0.44	0.54	0.48	    2778
+Weighted avg 0.46	0.55	0.50	    2778
+Samples avg	0.47	0.58	0.48	    2778
+
+Hamming Loss : 0.1228
 ```
 Hamming loss represents the fraction of incorrect labels. Lower is better.
 
