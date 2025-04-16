@@ -14,7 +14,7 @@ cd <your-repo-folder>
 python -m venv venv
 source venv/bin/activate 
 pip install -r requirements.txt
-
+```
 
 ⸻
 
@@ -25,9 +25,9 @@ This file was generated as part of the exploratory data analysis (EDA) and can b
 You’ll need to pass the path to this CSV when training the model.
 
 Once you trigger the training pipeline, the data is split into training and test sets automatically, and the test set is saved in:
-
+```bash
 data/test_data.csv
-
+```
 You don’t need to manually split the data.
 
 ⸻
@@ -37,27 +37,27 @@ How to train the model
 There are two ways to train the model: with or without cross-validation.
 
 Standard training (without CV)
-
+```bash
 python main.py train \
   --csv_path notebooks/code_classification_dataset_v3.csv \
   --model_path models/model.pkl \
   --vectorizer_path models/vectorizer.pkl \
   --binarizer_path models/binarizer.pkl
-
+```
 This will:
 	•	Train the model on 80% of the data (train/test split is done automatically)
 	•	Save the test set as data/test_data.csv for later evaluation
 	•	Save the model and its components in the models/ folder
 
 With cross-validation (for hyperparameter tuning)
-
+```bash
 python main.py train \
   --csv_path notebooks/code_classification_dataset_v3.csv \
   --model_path models/model.pkl \
   --vectorizer_path models/vectorizer.pkl \
   --binarizer_path models/binarizer.pkl \
   --cv
-
+```
 This will do a grid search over TF-IDF + Logistic Regression hyperparameters and train the final model using the best config.
 
 ⸻
@@ -65,31 +65,23 @@ This will do a grid search over TF-IDF + Logistic Regression hyperparameters and
 How to evaluate the model
 
 Once you’ve trained the model, you can evaluate its performance on the test set:
-
+```bash
 python main.py evaluate \
   --test_csv_path data/test_data.csv \
   --model_path models/model.pkl \
   --vectorizer_path models/vectorizer.pkl \
   --binarizer_path models/binarizer.pkl \
   --save_reports
-
+```
 This will print classification reports for:
 	•	All tags
 	•	Focus tags only (a set of 8 tags that are particularly important)
 
 It will also save the evaluation reports to the reports/ folder.
 
-Focus tags
-
-We pay special attention to these 8 commonly used algorithm tags:
-
-['games', 'geometry', 'graphs', 'math', 'number theory', 'probabilities', 'strings', 'trees']
-
-These are often highlighted separately in the evaluation.
-
 ⸻
 
-Tags
+Focus Tags
 
 The model is trained to predict all tags that appear in the dataset. However, we pay special attention to a list of focus tags during evaluation:
 
@@ -114,9 +106,9 @@ What’s inside
 Requirements
 
 Everything you need is in requirements.txt. You can install it with:
-
+```bash
 pip install -r requirements.txt
-
+```
 ⸻
 
 Metrics
