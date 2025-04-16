@@ -91,6 +91,7 @@ The model is trained to predict all tags that appear in the dataset. However, we
 ⸻
 
 What’s inside
+```
 	•	train.py: trains the model and saves artifacts
 	•	evaluate.py: loads the model and generates evaluation metrics
 	•	main.py: CLI wrapper to run training or evaluation
@@ -100,7 +101,7 @@ What’s inside
 	•	data/: where the test split is saved
 	•	notebooks/: contains EDA and the final dataset (code_classification_dataset_v3.csv)
     •	reports/: contains the metrics on the test set. 
-
+```
 ⸻
 
 Requirements
@@ -114,7 +115,7 @@ pip install -r requirements.txt
 Metrics
 
 Here are the final metrics obtained using the default configuration (TF-IDF + Logistic Regression):
-
+```
 Classification Report — All Tags
 
 Metric	Precision	Recall	F1-score	Support
@@ -123,7 +124,7 @@ Macro avg	0.44	0.54	0.48	2778
 Weighted avg	0.46	0.55	0.50	2778
 Samples avg	0.47	0.58	0.48	2778
 Hamming Loss	—	—	—	0.1228
-
+```
 Hamming loss represents the fraction of incorrect labels. Lower is better.
 
 ⸻
@@ -132,7 +133,7 @@ Hamming loss represents the fraction of incorrect labels. Lower is better.
 Here’s the full classification report for the focus tags, formatted for direct copy-paste into your README or other documents:
 
 ⸻
-
+```
 Classification Report — Focus Tags Only
 
                precision    recall  f1-score   support
@@ -152,13 +153,14 @@ probabilities       0.71      0.55      0.62        22
   samples avg       0.33      0.36      0.33       688
 
 Hamming Loss (Focus Tags): 0.0779
-
+```
 This performance shows consistent results across key tags like math, graphs, and strings, with micro F1-score of 0.60 and low Hamming Loss, which reflects strong multi-label accuracy for the most relevant categories.
 
 ⸻
-
+```
 Final notes
 	•	The project is structured to make it easy to extend (e.g. semantic embeddings, new models, API).
 	•	You can re-run the EDA notebook to generate or inspect the dataset.
 	•	Training and evaluation run fully from the CLI.
+```
 ⸻
